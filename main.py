@@ -188,7 +188,7 @@ if __name__ == '__main__':
         accuracy = test_ann_per_class(model=ann, test_loader=test_loader, num_class=52)
         print(accuracy)
 
-    # Test SNN
+    # Test SNN: 这里的output_model请修改成你想要测试的pkl文件，可以是上面ann训练得到的模型
     output_model = 'output/IB_-FCN2-NinaPro-DB1_acc-0.7357046604156494.pkl'
     device = torch.device('cuda')
     snn = SpikingFCN(input_shape=(1, 12, 10), num_classes=52,

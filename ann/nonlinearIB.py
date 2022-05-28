@@ -271,7 +271,7 @@ class InformationBottleneck(torch.nn.Module):
                         f'- Current  | Best Test accuracy = {test_performance_vec[report]} | {best_test_accuracy}\n')
                     if best_test_accuracy < test_performance_vec[report]:
                         best_test_accuracy = test_performance_vec[report]
-                        torch.save(self.network.state_dict(), output_model.format(self.ib_type, self.network.__class__, best_test_accuracy))
+                        torch.save(self.network.state_dict(), output_model.format(self.ib_type, self.network.__class__.__name__, best_test_accuracy))
                         best_model = self.state_dict()
                     report += 1
                     # Visualize results and save results
